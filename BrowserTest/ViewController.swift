@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-protocol ButtonDidTap: AnyObject {
+protocol CustomTabBarDelegate: AnyObject {
     func backButtonDidTap()
     func forwardButtonDidTap()
 }
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension ViewController: ButtonDidTap {
+extension ViewController: CustomTabBarDelegate {
     func backButtonDidTap() {
         web.goBack()
     }
@@ -82,7 +82,7 @@ extension ViewController: ButtonDidTap {
 
 class CustomTabBar: UIView {
     
-    weak var delgate: ButtonDidTap!
+    weak var delgate: CustomTabBarDelegate!
     
     lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [backButton, forwardButton])
