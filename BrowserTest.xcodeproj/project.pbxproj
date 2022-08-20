@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B23449BB28B0AEB40047294F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23449BA28B0AEB40047294F /* HomeViewController.swift */; };
 		B23449C228B0BCB60047294F /* UIView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23449C128B0BCB60047294F /* UIView-Extension.swift */; };
+		B23449C428B0BE290047294F /* GoogleSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23449C328B0BE290047294F /* GoogleSuggestion.swift */; };
+		B23449C728B0BE5B0047294F /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B23449C628B0BE5B0047294F /* Kanna */; };
 		B2F0A0DA288ABD4800C97D13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0D9288ABD4800C97D13 /* AppDelegate.swift */; };
 		B2F0A0DC288ABD4800C97D13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0DB288ABD4800C97D13 /* SceneDelegate.swift */; };
 		B2F0A0E3288ABD4900C97D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0E2288ABD4900C97D13 /* Assets.xcassets */; };
@@ -18,6 +20,7 @@
 /* Begin PBXFileReference section */
 		B23449BA28B0AEB40047294F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B23449C128B0BCB60047294F /* UIView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Extension.swift"; sourceTree = "<group>"; };
+		B23449C328B0BE290047294F /* GoogleSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSuggestion.swift; sourceTree = "<group>"; };
 		B2F0A0D6288ABD4800C97D13 /* BrowserTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F0A0D9288ABD4800C97D13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F0A0DB288ABD4800C97D13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23449C728B0BE5B0047294F /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 		B23449BE28B0BC830047294F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B23449C328B0BE290047294F /* GoogleSuggestion.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			);
 			name = BrowserTest;
 			packageProductDependencies = (
+				B23449C628B0BE5B0047294F /* Kanna */,
 			);
 			productName = BrowserTest;
 			productReference = B2F0A0D6288ABD4800C97D13 /* BrowserTest.app */;
@@ -139,6 +145,7 @@
 			mainGroup = B2F0A0CD288ABD4700C97D13;
 			packageReferences = (
 				B2F0A0F3288AC07B00C97D13 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B23449C528B0BE5B0047294F /* XCRemoteSwiftPackageReference "Kanna" */,
 			);
 			productRefGroup = B2F0A0D7288ABD4800C97D13 /* Products */;
 			projectDirPath = "";
@@ -166,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B23449C428B0BE290047294F /* GoogleSuggestion.swift in Sources */,
 				B23449C228B0BCB60047294F /* UIView-Extension.swift in Sources */,
 				B2F0A0DA288ABD4800C97D13 /* AppDelegate.swift in Sources */,
 				B2F0A0DC288ABD4800C97D13 /* SceneDelegate.swift in Sources */,
@@ -379,6 +387,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B23449C528B0BE5B0047294F /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B2F0A0F3288AC07B00C97D13 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -388,6 +404,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B23449C628B0BE5B0047294F /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B23449C528B0BE5B0047294F /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2F0A0CE288ABD4700C97D13 /* Project object */;
 }
