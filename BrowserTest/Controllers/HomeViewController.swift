@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         observation = webView.observe(\.estimatedProgress, options: .new){_, change in
             //            print("\(String(describing: change.newValue))")
             self.progressBar.setProgress(Float(change.newValue!), animated: true)
-
+            
             if change.newValue == 1.0 {
                 UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn], animations: { self.progressBar.alpha = 0.0 }, completion: { (finished: Bool) in
                     self.progressBar.setProgress(0.0, animated: true) } )
@@ -86,7 +86,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(webView)
         view.addSubview(customTabBar)
-
+        
         webView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor)
         
         customTabBar.anchor(height: 50)
@@ -118,14 +118,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        
         searchBar.showsCancelButton = true
         return true
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         setupSearchTableView()
         Task {
             guard let suggestion = try? await api.getSuggestions(searchText: searchBar.text ?? "" ) else { return }
@@ -191,7 +188,14 @@ extension HomeViewController: CustomTabBarButtonDelegate {
     }
     
     func shareButtonDidTap() {
-        print("タップされました")
+        
+        guard let shareWebsite = URL(string: "\(webView.url?.absoluteString ?? "")"),
+            let shareText = webView.title else { return }
+        
+        let activityItems = [shareText, shareWebsite] as [Any]
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        self.present(activityVC, animated: true)
     }
     
     func logButtonDidTap() {
@@ -202,4 +206,13 @@ extension HomeViewController: CustomTabBarButtonDelegate {
         print("タップされました")
     }
     
+}
+
+
+
+extension HomeViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print(webView.url?.absoluteString ?? "")
+    }
 }

@@ -21,7 +21,7 @@ class CustomTabBar: UIView {
     
     private let backButton: UIButton = CustomButton(imageName: "chevron.backward")
     private let forwardButton: UIButton = CustomButton(imageName: "chevron.right")
-    private let shareButton: UIButton = CustomButton(imageName: "square.and.arrow.up")
+     let shareButton: UIButton = CustomButton(imageName: "square.and.arrow.up")
     private let logButton: UIButton = CustomButton(imageName: "book")
     private let addTabButton: UIButton = CustomButton(imageName: "square.on.square")
     
